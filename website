@@ -1,1 +1,103 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Virtual Art Gallery - Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f4f4f4;
+    }
+
+    .login-container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .error-message {
+      color: red;
+      margin-top: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h1>Virtual Art Gallery</h1>
+    <div id="loginForm">
+      <label for="studentName">Student Name:</label>
+      <input type="text" id="studentName" />
+
+      <label for="studentId">Student ID:</label>
+      <input type="text" id="studentId" />
+
+      <label for="rollNumber">Roll Number:</label>
+      <input type="text" id="rollNumber" />
+
+      <button onclick="handleLogin()">Login</button>
+      <p id="errorMessage" class="error-message"></p>
+    </div>
+  </div>
+
+  <script>
+    function handleLogin() {
+      const studentName = document.getElementById('studentName').value;
+      const studentId = document.getElementById('studentId').value;
+      const rollNumber = document.getElementById('rollNumber').value;
+      const errorMessageElement = document.getElementById('errorMessage');
+
+      const idPrefix = '202324';
+      const secondPageUrl = 'YOUR_SECOND_PAGE_URL'; // Replace with your actual second page URL
+
+      if (studentId.startsWith(idPrefix) && /^\d{5}$/.test(rollNumber)) {
+        errorMessageElement.textContent = '';
+        console.log('Login successful!');
+        // Redirect to the second page
+        window.location.href = 'https://blogwriting.neocities.org/virtualartgallery';
+      } else {
+        errorMessageElement.textContent = 'Invalid student information. Please check the requirements.';
+      }
+    }
+  </script>
+</body>
+</html>
+
+
+
 
