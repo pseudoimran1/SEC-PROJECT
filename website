@@ -1,4 +1,4 @@
-<!-- index.html -->
+    WEBSITE: PAGE 1 login page
 
 <!DOCTYPE html>
 <html lang="en">
@@ -92,11 +92,113 @@
         window.location.href = 'https://blogwriting.neocities.org/virtualartgallery';
       } else {
         errorMessageElement.textContent = 'Invalid student information. Please check the requirements.';
+
       }
     }
   </script>
 </body>
 </html>
+
+
+    WEBSITE : PAGE 2 
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Art Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        .artwork-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 1em;
+        }
+
+        .artwork {
+            margin: 1em;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .artwork:hover {
+            transform: scale(1.05);
+        }
+
+        .artwork img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1em;
+            background-color: #333;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Virtual Art Gallery</h1>
+</header>
+
+<div class="artwork-container">
+    <!-- Slot 1 -->
+    <div class="artwork">
+        <img src="https://blogwriting.neocities.org/IMG_6757.jpeg"alt="Artwork 1">
+        <p>Artist: Parnod naidu </p>
+        <p>Title: Sunset</p>
+    </div>
+
+    <!-- Slot 2 -->
+    <div class="artwork">
+        <img src="https://blogwriting.neocities.org/IMG_6758.jpeg"alt="Artwork 2">
+        <p>Artist: Satish John</p>
+        <p>Title: Dharavi Robber</p>
+    </div>
+
+    <!-- Slot 3 -->
+    <div class="artwork">
+        <img src="https://blogwriting.neocities.org/IMG_6759.jpeg" alt="Artwork 3">
+        <p>Artist: Khawaja Shaikh</p>
+        <p>Title: Chiriya (Birds)</p>
+    </div>
+
+  
+  
+    </div>
+
+    
+
+</div>
+
+<footer>
+    <p>&copy; 2024 Virtual Art Gallery</p>
+</footer>
+
+</body>
+</html>
+
 
 
 
