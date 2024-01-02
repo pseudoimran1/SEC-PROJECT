@@ -1,0 +1,1541 @@
+ 
+Practical Assignment
+
+1.Write a javascript to check whether a year is leap or not..
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leap Year</title>
+</head>
+<body>
+    <h1>Check whether it is a leap year or not</h1>
+    <label for="yearInput">Enter:</label>
+    <input type="number" id="yearInput" placeholder="Enter a year">
+    <button onclick="checkLeapYear()">Check</button>
+    <p id="result"></p>
+
+    <script>
+        function checkLeapYear() {
+            var year = parseInt(document.getElementById("yearInput").value);
+
+            if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+                document.getElementById("result").innerHTML = year + " is a Leap Year!";
+            } else {
+                document.getElementById("result").innerHTML = year + " is not a Leap Year.";
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+2.Write a javascript to check whether a number is even or odd
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Even or Odd </title>
+</head>
+<body>
+    <h1>Even or Odd Checker</h1>
+    <input type="number" id="num" placeholder="Enter a number">
+    <button onclick="checkEvenOrOdd()">Check</button>
+    <p id="result"></p>
+
+    <script>
+        function checkEvenOrOdd() {
+            var number = document.getElementById("num").value;
+
+            var result = document.getElementById("result");
+            result.innerHTML = isNaN(number) ? "Please enter a valid number" : (number % 2 === 0 ? "The number is Even" : "The number is Odd");
+        }
+    </script>
+</body>
+</html>
+
+3.Write a javascript to check whether a number is positive, negative or neutral.
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Positive, Negative, or Neutral number</title>
+</head>
+
+<body>
+    <h1>Positive, Negative, or Neutral number</h1>
+    <script>
+        var number = prompt('Enter your number:'); 
+        var num = parseFloat(number);
+
+        if (!isNaN(num)) {
+            if (num > 0) {
+                alert(num + ' is Positive Number');
+            } else if (num < 0) {
+                alert(num + ' is Negative Number');
+            } else {
+                alert(num + ' is Neutral Number');
+            }
+        } else {
+            alert('Enter a valid number.');
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+4.Write a javascript to print the numbers from 1 to 10
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>1 to 10 numbers</title>
+</head>
+<body>
+    <h1>Numbers from 1 to 10</h1>
+    <div id="numbers"></div>
+    <script>
+        let numbersDiv = document.getElementById("numbers");
+        for (let i = 1; i <= 10; i++) {
+            numbersDiv.innerHTML += i + "<br>";
+        }
+    </script>
+</body>
+</html>
+
+5.Write a javascript to print the numbers in reverse order
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Printing Numbers in Reverse</title>
+</head>
+<body>
+    <h1>Numbers from 10 to 1 in Reverse Order</h1>
+    <div id="numbers"></div>
+    <script>
+        let numbersDiv = document.getElementById("numbers");
+        for (let i = 10; i >= 1; i--) {
+            numbersDiv.innerHTML += i + "<br>";
+        }
+    </script>
+</body>
+</html>
+
+
+6.Write a javascript to print the reverse of a number....
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reverse of a Number</title>
+</head>
+<body>
+    <h1>Reverse of a Number</h1>
+    <input type="number" id="num" placeholder="Enter your number">
+    <button onclick="reverseNumber()">Check</button>
+    <p id="reversedanswer"></p>
+
+    <script>
+        function reverseNumber() {
+            var number = document.getElementById("num").value;
+            var reversedanswer = document.getElementById("reversedanswer");
+            
+            reversedanswer.innerHTML = `Reverse: ${number.split('').reverse().join('')}`;
+        }
+    </script>
+</body>
+</html>
+
+
+7.Write a javascript to check whether a number is Armstrong number or not
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Armstrong Number</title>
+</head>
+
+<body>
+    <h1>Armstrong Number Checker</h1>
+    <label for="userInput">Enter a number:</label>
+    <input type="text" id="userInput">
+    <button onclick="checkArmstrong()">Check</button>
+    <div id="armstrongResult"></div>
+
+    <script>
+        function checkArmstrong() {
+            let userInput = document.getElementById("userInput").value;
+            let armstrongResultDiv = document.getElementById("armstrongResult");
+            let sum = 0;
+
+            for (let i = 0; i < userInput.length; i++) {
+                sum += Number(userInput[i]) ** userInput.length;
+            }
+
+            const isArmstrong = sum === Number(userInput);
+            armstrongResultDiv.innerHTML = `${userInput} ${isArmstrong ? 'is an Armstrong number.' : 'is not an Armstrong number.'}`;
+        }
+    </script>
+</body>
+
+</html>
+
+
+8.Write a javascript to check whether a number is Palindrome or not
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Palindrome Checker</title>
+</head>
+<body>
+    <h1>Palindrome Checker</h1>
+    <label for="number">Enter a number:</label>
+    <input type="number" id="number">
+    <button onclick="checkPalindrome()">Check</button>
+    <p id="answer"></p>
+
+    <script>
+        function checkPalindrome() {
+            var number = document.getElementById("number").value;
+            var isPalindrome = number.toString() === number.toString().split('').reverse().join('');
+            document.getElementById("answer").innerHTML = isPalindrome ? "It's a Palindrome!" : "Not a Palindrome";
+        }
+    </script>
+</body>
+</html>
+
+
+9.Write a javascript to check whether a string is Palindrome or not
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Palindrome</title>
+</head>
+<body>
+    <h1>Palindrome</h1>
+    <label for="String">Enter a string:</label>
+    <input type="text" id="String">
+    <button onclick="checkPalindrome()">Check</button>
+    <p id="answer"></p>
+
+    <script>
+        function checkPalindrome() {
+            var String = document.getElementById("String").value.toLowerCase();
+            var isPalindrome = String === String.split('').reverse().join('');
+            document.getElementById("answer").innerHTML = isPalindrome ? "It's a Palindrome!" : "Not a Palindrome";
+        }
+    </script>
+</body>
+</html>
+
+
+10.Write a javascript to print the factorial of a number
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Factorial Calculator</title>
+</head>
+
+<body>
+    <h1>Factorial Calculator</h1>
+
+    <label for="numberInput">Enter a number:</label>
+    <input type="num" id="num">
+    <button onclick="calculateFactorial()">Calculate</button>
+
+    <script>
+        function calculateFactorial() {
+            const num = document.getElementById('num').value;
+            let factorial = 1;
+
+            for (let i = 2; i <= num; i++) {
+                factorial *= i;
+            }
+
+            alert(`The factorial of ${num} is: ${factorial}`);
+        }
+    </script>
+</body>
+
+</html>
+
+11.Write a javascript to print the sum of n numbers
+
+
+
+12.Write a javascript to check whether a character is vowel or consonant
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Vowel or Consonant Checker</title>
+</head>
+
+<body>
+    <h1>Vowel or Consonant Checker</h1>
+
+    <script>
+        const character = prompt('Enter a character:');
+
+        const vowels = 'aeiouAEIOU';
+        const isVowel = vowels.includes(character);
+
+        if (isVowel) {
+            alert(`${character} is a vowel.`);
+        } else {
+            alert(`${character} is a consonant.`);
+        }
+    </script>
+</body>
+
+</html>
+
+
+13.Write a javascript to check whether a number is prime number or not
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prime Number Checker</title>
+</head>
+<body>
+    <h1>Check Prime Number</h1>
+    <label for="Inputprime">Enter a number:</label>
+    <input type="primenumber" id="Inputprime" placeholder="Enter number">
+    <button onclick="checkPrimeNumber()">Check</button>
+    <p id="answer"></p>
+
+    <script>
+        function checkPrimeNumber() {
+            var number =document.getElementById("Inputprime").value;
+
+            if (isNaN(number) || number <= 1) {
+                document.getElementById("answer").innerHTML = "Please enter a valid number greater than 1.";
+                return;
+            }
+
+            for (let i = 2; i <= Math.sqrt(number); i++) {
+                if (number % i === 0) {
+                    document.getElementById("answer").innerHTML = `${number} is not a prime number.`;
+                    return;
+                }
+            }
+
+            document.getElementById("answer").innerHTML = `${number} is a prime number!`;
+        }
+    </script>
+</body>
+</html>
+
+
+14.Write a javascript to print the Fibonacci series
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fibonacci Series</title>
+</head>
+<body>
+    <h1>Fibonacci Series</h1>
+    <div>No. Of Terms:</div>
+    <input type="number" id="num" min="1" value="10">
+    <button onclick="generateFibonacci()">Generate</button>
+    <p id="answer"></p>
+
+    <script>
+        function generateFibonacci() {
+            var num = parseInt(document.getElementById("num").value);
+            var answer = document.getElementById("answer");
+            let num1 = 0, num2 = 1, nextTerm;
+            let series = "Fibonacci Series:<br>";
+
+            for (let i = 1; i <= num; i++) {
+                series += num1 + "<br>";
+                nextTerm = num1 + num2;
+                num1 = num2;
+                num2 = nextTerm;
+            }
+
+            answer.innerHTML = series;
+        }
+    </script>
+</body>
+</html>
+
+
+15.Write a javascript to print prime numbers between 1 and 100....gadbad....
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prime Numbers from 1 to 100</title>
+</head>
+<body>
+    <h1>Prime Numbers from 1 to 100</h1>
+    <div id="numbers"></div>
+    <script>
+        let numbersDiv = document.getElementById("numbers");
+
+        function isPrime(num) {
+            for (let i = 2; i < num; i++) {
+                if (num % i === 0) {
+                    return false;
+                }
+            }
+            return num > 1;
+        }
+
+        for (let i = 2; i <= 100; i++) {
+            if (isPrime(i)) {
+                 numbersDiv.innerHTML += i + "<br>";
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+16.Write a javascript to print even numbers between 1 and 100
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Even numbers from 1 to 100</title>
+</head>
+<body>
+    <h1>Even numbers from 1 to 100</h1>
+    <div id="numbers"></div>
+    <script>
+        let numbersDiv = document.getElementById("numbers");
+        for (let i = 2; i <= 100; i+=2) {
+            numbersDiv.innerHTML += i +  "<br>";
+        }
+    </script>
+</body>
+</html>
+
+17.Write a javascript to print odd numbers between 1 and 100
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Odd numbers from 1 to 100</title>
+</head>
+<body>
+    <h1>Odd numbers from 1 to 100</h1>
+    <div id="numbers"></div>
+    <script>
+        let numbersDiv = document.getElementById("numbers");
+        for (let i = 1; i <= 100; i+=2) {
+            numbersDiv.innerHTML += i +  "<br>";
+        }
+    </script>
+</body>
+</html>
+
+18.Write a javascript to print leap years between 2021 and 2030
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>leap years between 2021 and 2030</title>
+</head>
+<body>
+    <h1>leap years between 2021 and 2030</h1>
+    <div id="leapyears"></div>
+    <script>
+        let leapyearsDiv = document.getElementById("leapyears");
+        for (var year = 2021; year <= 2030; year++) {
+            if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+                leapyearsDiv.innerHTML += year + "<br>";
+            }
+        }
+    </script>
+</body>
+</html>
+
+19.Write a javascript to validate a mobile number
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mobile Number Validation</title>
+</head>
+<body>
+    <h1>Mobile Number Validation</h1>
+    <label for="number">Enter your mobile number:</label>
+    <input type="text" id="number" placeholder="eg:1234567890">
+    <button onclick="validateMobileNumber()">Validate</button>
+    <p id="answer"></p>
+
+    <script>
+        function validateMobileNumber() {
+            var number = document.getElementById("number").value;
+            var num = /^[0-9]{10}$/;
+
+            if (num.test(number)) {
+                document.getElementById("answer").innerHTML = "Valid mobile number!";
+            } else {
+                document.getElementById("answer").innerHTML = "Invalid mobile number";
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+20.Write a javascript to validate an email id.
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email Validation</title>
+</head>
+<body>
+    <h1>Email Validation</h1>
+    <label for="email">Enter your email id:</label>
+    <input type="text" id="email" placeholder="eg.abx@gmail.com">
+    <button onclick="validateEmail()">Validate</button>
+    <p id="answer"></p>
+
+    <script>
+        function validateEmail() {
+            var email = document.getElementById("email").value;
+            var isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+            document.getElementById("answer").innerHTML = isValid ? "Valid email address!" : "Invalid email address,Enter a valid email."; 
+        }
+    </script>
+</body>
+</html>Practical Assignment
+
+1.Write a javascript to check whether a year is leap or not....gadbad...
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leap Year</title>
+</head>
+<body>
+    <h1>Check whether it is a leap year or not</h1>
+    <label for="yearInput">Enter:</label>
+    <input type="number" id="yearInput" placeholder="Enter a year">
+    <button onclick="checkLeapYear()">Check</button>
+    <p id="result"></p>
+
+    <script>
+        function checkLeapYear() {
+            var year = parseInt(document.getElementById("yearInput").value);
+
+            if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+                document.getElementById("result").innerHTML = year + " is a Leap Year!";
+            } else {
+                document.getElementById("result").innerHTML = year + " is not a Leap Year.";
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+2.Write a javascript to check whether a number is even or odd
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Even or Odd </title>
+</head>
+<body>
+    <h1>Even or Odd Checker</h1>
+    <input type="number" id="num" placeholder="Enter a number">
+    <button onclick="checkEvenOrOdd()">Check</button>
+    <p id="result"></p>
+
+    <script>
+        function checkEvenOrOdd() {
+            var number = document.getElementById("num").value;
+
+            var result = document.getElementById("result");
+            result.innerHTML = isNaN(number) ? "Please enter a valid number" : (number % 2 === 0 ? "The number is Even" : "The number is Odd");
+        }
+    </script>
+</body>
+</html>
+
+3.Write a javascript to check whether a number is positive, negative or neutral.
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Positive, Negative, or Neutral number</title>
+</head>
+
+<body>
+    <h1>Positive, Negative, or Neutral number</h1>
+    <script>
+        var number = prompt('Enter your number:'); 
+        var num = parseFloat(number);
+
+        if (!isNaN(num)) {
+            if (num > 0) {
+                alert(num + ' is Positive Number');
+            } else if (num < 0) {
+                alert(num + ' is Negative Number');
+            } else {
+                alert(num + ' is Neutral Number');
+            }
+        } else {
+            alert('Enter a valid number.');
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+4.Write a javascript to print the numbers from 1 to 10
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>1 to 10 numbers</title>
+</head>
+<body>
+    <h1>Numbers from 1 to 10</h1>
+    <div id="numbers"></div>
+    <script>
+        let numbersDiv = document.getElementById("numbers");
+        for (let i = 1; i <= 10; i++) {
+            numbersDiv.innerHTML += i + "<br>";
+        }
+    </script>
+</body>
+</html>
+
+5.Write a javascript to print the numbers in reverse order
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Printing Numbers in Reverse</title>
+</head>
+<body>
+    <h1>Numbers from 10 to 1 in Reverse Order</h1>
+    <div id="numbers"></div>
+    <script>
+        let numbersDiv = document.getElementById("numbers");
+        for (let i = 10; i >= 1; i--) {
+            numbersDiv.innerHTML += i + "<br>";
+        }
+    </script>
+</body>
+</html>
+
+
+6.Write a javascript to print the reverse of a number..
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reverse of a Number</title>
+</head>
+<body>
+    <h1>Reverse of a Number</h1>
+    <input type="number" id="num" placeholder="Enter your number">
+    <button onclick="reverseNumber()">Check</button>
+    <p id="reversedanswer"></p>
+
+    <script>
+        function reverseNumber() {
+            var number = document.getElementById("num").value;
+            var reversedanswer = document.getElementById("reversedanswer");
+            
+            reversedanswer.innerHTML = `Reverse: ${number.split('').reverse().join('')}`;
+        }
+    </script>
+</body>
+</html>
+
+
+7.Write a javascript to check whether a number is Armstrong number or not
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Armstrong Number</title>
+</head>
+
+<body>
+    <h1>Armstrong Number Checker</h1>
+    <label for="userInput">Enter a number:</label>
+    <input type="text" id="userInput">
+    <button onclick="checkArmstrong()">Check</button>
+    <div id="armstrongResult"></div>
+
+    <script>
+        function checkArmstrong() {
+            let userInput = document.getElementById("userInput").value;
+            let armstrongResultDiv = document.getElementById("armstrongResult");
+            let sum = 0;
+
+            for (let i = 0; i < userInput.length; i++) {
+                sum += Number(userInput[i]) ** userInput.length;
+            }
+
+            const isArmstrong = sum === Number(userInput);
+            armstrongResultDiv.innerHTML = `${userInput} ${isArmstrong ? 'is an Armstrong number.' : 'is not an Armstrong number.'}`;
+        }
+    </script>
+</body>
+
+</html>
+
+
+8.Write a javascript to check whether a number is Palindrome or not
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Palindrome Checker</title>
+</head>
+<body>
+    <h1>Palindrome Checker</h1>
+    <label for="number">Enter a number:</label>
+    <input type="number" id="number">
+    <button onclick="checkPalindrome()">Check</button>
+    <p id="answer"></p>
+
+    <script>
+        function checkPalindrome() {
+            var number = document.getElementById("number").value;
+            var isPalindrome = number.toString() === number.toString().split('').reverse().join('');
+            document.getElementById("answer").innerHTML = isPalindrome ? "It's a Palindrome!" : "Not a Palindrome";
+        }
+    </script>
+</body>
+</html>
+
+
+9.Write a javascript to check whether a string is Palindrome or not
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Palindrome</title>
+</head>
+<body>
+    <h1>Palindrome</h1>
+    <label for="String">Enter a string:</label>
+    <input type="text" id="String">
+    <button onclick="checkPalindrome()">Check</button>
+    <p id="answer"></p>
+
+    <script>
+        function checkPalindrome() {
+            var String = document.getElementById("String").value.toLowerCase();
+            var isPalindrome = String === String.split('').reverse().join('');
+            document.getElementById("answer").innerHTML = isPalindrome ? "It's a Palindrome!" : "Not a Palindrome";
+        }
+    </script>
+</body>
+</html>
+
+
+10.Write a javascript to print the factorial of a number
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Factorial Calculator</title>
+</head>
+
+<body>
+    <h1>Factorial Calculator</h1>
+
+    <label for="numberInput">Enter a number:</label>
+    <input type="num" id="num">
+    <button onclick="calculateFactorial()">Calculate</button>
+
+    <script>
+        function calculateFactorial() {
+            const num = document.getElementById('num').value;
+            let factorial = 1;
+
+            for (let i = 2; i <= num; i++) {
+                factorial *= i;
+            }
+
+            alert(`The factorial of ${num} is: ${factorial}`);
+        }
+    </script>
+</body>
+
+</html>
+
+11.Write a javascript to print the sum of n numbers
+
+
+
+12.Write a javascript to check whether a character is vowel or consonant
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Vowel or Consonant Checker</title>
+</head>
+
+<body>
+    <h1>Vowel or Consonant Checker</h1>
+
+    <script>
+        const character = prompt('Enter a character:');
+
+        const vowels = 'aeiouAEIOU';
+        const isVowel = vowels.includes(character);
+
+        if (isVowel) {
+            alert(`${character} is a vowel.`);
+        } else {
+            alert(`${character} is a consonant.`);
+        }
+    </script>
+</body>
+
+</html>
+
+
+13.Write a javascript to check whether a number is prime number or not
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prime Number Checker</title>
+</head>
+<body>
+    <h1>Check Prime Number</h1>
+    <label for="Inputprime">Enter a number:</label>
+    <input type="primenumber" id="Inputprime" placeholder="Enter number">
+    <button onclick="checkPrimeNumber()">Check</button>
+    <p id="answer"></p>
+
+    <script>
+        function checkPrimeNumber() {
+            var number =document.getElementById("Inputprime").value;
+
+            if (isNaN(number) || number <= 1) {
+                document.getElementById("answer").innerHTML = "Please enter a valid number greater than 1.";
+                return;
+            }
+
+            for (let i = 2; i <= Math.sqrt(number); i++) {
+                if (number % i === 0) {
+                    document.getElementById("answer").innerHTML = `${number} is not a prime number.`;
+                    return;
+                }
+            }
+
+            document.getElementById("answer").innerHTML = `${number} is a prime number!`;
+        }
+    </script>
+</body>
+</html>
+
+
+14.Write a javascript to print the Fibonacci series
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fibonacci Series</title>
+</head>
+<body>
+    <h1>Fibonacci Series</h1>
+    <div>No. Of Terms:</div>
+    <input type="number" id="num" min="1" value="10">
+    <button onclick="generateFibonacci()">Generate</button>
+    <p id="answer"></p>
+
+    <script>
+        function generateFibonacci() {
+            var num = parseInt(document.getElementById("num").value);
+            var answer = document.getElementById("answer");
+            let num1 = 0, num2 = 1, nextTerm;
+            let series = "Fibonacci Series:<br>";
+
+            for (let i = 1; i <= num; i++) {
+                series += num1 + "<br>";
+                nextTerm = num1 + num2;
+                num1 = num2;
+                num2 = nextTerm;
+            }
+
+            answer.innerHTML = series;
+        }
+    </script>
+</body>
+</html>
+
+
+15.Write a javascript to print prime numbers between 1 and 100....gadbad....
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prime Numbers from 1 to 100</title>
+</head>
+<body>
+    <h1>Prime Numbers from 1 to 100</h1>
+    <div id="numbers"></div>
+    <script>
+        let numbersDiv = document.getElementById("numbers");
+
+        function isPrime(num) {
+            for (let i = 2; i < num; i++) {
+                if (num % i === 0) {
+                    return false;
+                }
+            }
+            return num > 1;
+        }
+
+        for (let i = 2; i <= 100; i++) {
+            if (isPrime(i)) {
+                 numbersDiv.innerHTML += i + "<br>";
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+16.Write a javascript to print even numbers between 1 and 100
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Even numbers from 1 to 100</title>
+</head>
+<body>
+    <h1>Even numbers from 1 to 100</h1>
+    <div id="numbers"></div>
+    <script>
+        let numbersDiv = document.getElementById("numbers");
+        for (let i = 2; i <= 100; i+=2) {
+            numbersDiv.innerHTML += i +  "<br>";
+        }
+    </script>
+</body>
+</html>
+
+17.Write a javascript to print odd numbers between 1 and 100
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Odd numbers from 1 to 100</title>
+</head>
+<body>
+    <h1>Odd numbers from 1 to 100</h1>
+    <div id="numbers"></div>
+    <script>
+        let numbersDiv = document.getElementById("numbers");
+        for (let i = 1; i <= 100; i+=2) {
+            numbersDiv.innerHTML += i +  "<br>";
+        }
+    </script>
+</body>
+</html>
+
+18.Write a javascript to print leap years between 2021 and 2030
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>leap years between 2021 and 2030</title>
+</head>
+<body>
+    <h1>leap years between 2021 and 2030</h1>
+    <div id="leapyears"></div>
+    <script>
+        let leapyearsDiv = document.getElementById("leapyears");
+        for (var year = 2021; year <= 2030; year++) {
+            if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+                leapyearsDiv.innerHTML += year + "<br>";
+            }
+        }
+    </script>
+</body>
+</html>
+
+19.Write a javascript to validate a mobile number
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mobile Number Validation</title>
+</head>
+<body>
+    <h1>Mobile Number Validation</h1>
+    <label for="number">Enter your mobile number:</label>
+    <input type="text" id="number" placeholder="eg:1234567890">
+    <button onclick="validateMobileNumber()">Validate</button>
+    <p id="answer"></p>
+
+    <script>
+        function validateMobileNumber() {
+            var number = document.getElementById("number").value;
+            var num = /^[0-9]{10}$/;
+
+            if (num.test(number)) {
+                document.getElementById("answer").innerHTML = "Valid mobile number!";
+            } else {
+                document.getElementById("answer").innerHTML = "Invalid mobile number";
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+20.Write a javascript to validate an email id.
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email Validation</title>
+</head>
+<body>
+    <h1>Email Validation</h1>
+    <label for="email">Enter your email id:</label>
+    <input type="text" id="email" placeholder="eg.abx@gmail.com">
+    <button onclick="validateEmail()">Validate</button>
+    <p id="answer"></p>
+
+    <script>
+        function validateEmail() {
+            var email = document.getElementById("email").value;
+            var isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+            document.getElementById("answer").innerHTML = isValid ? "Valid email address!" : "Invalid email address,Enter a valid email."; 
+        }
+    </script>
+</body>
+</html>Practical Assignment
+
+1.Write a javascript to check whether a year is leap or not....gadbad...
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leap Year</title>
+</head>
+<body>
+    <h1>Check whether it is a leap year or not</h1>
+    <label for="yearInput">Enter:</label>
+    <input type="number" id="yearInput" placeholder="Enter a year">
+    <button onclick="checkLeapYear()">Check</button>
+    <p id="result"></p>
+
+    <script>
+        function checkLeapYear() {
+            var year = parseInt(document.getElementById("yearInput").value);
+
+            if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+                document.getElementById("result").innerHTML = year + " is a Leap Year!";
+            } else {
+                document.getElementById("result").innerHTML = year + " is not a Leap Year.";
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+2.Write a javascript to check whether a number is even or odd
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Even or Odd </title>
+</head>
+<body>
+    <h1>Even or Odd Checker</h1>
+    <input type="number" id="num" placeholder="Enter a number">
+    <button onclick="checkEvenOrOdd()">Check</button>
+    <p id="result"></p>
+
+    <script>
+        function checkEvenOrOdd() {
+            var number = document.getElementById("num").value;
+
+            var result = document.getElementById("result");
+            result.innerHTML = isNaN(number) ? "Please enter a valid number" : (number % 2 === 0 ? "The number is Even" : "The number is Odd");
+        }
+    </script>
+</body>
+</html>
+
+3.Write a javascript to check whether a number is positive, negative or neutral.
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Positive, Negative, or Neutral number</title>
+</head>
+
+<body>
+    <h1>Positive, Negative, or Neutral number</h1>
+    <script>
+        var number = prompt('Enter your number:'); 
+        var num = parseFloat(number);
+
+        if (!isNaN(num)) {
+            if (num > 0) {
+                alert(num + ' is Positive Number');
+            } else if (num < 0) {
+                alert(num + ' is Negative Number');
+            } else {
+                alert(num + ' is Neutral Number');
+            }
+        } else {
+            alert('Enter a valid number.');
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+4.Write a javascript to print the numbers from 1 to 10
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>1 to 10 numbers</title>
+</head>
+<body>
+    <h1>Numbers from 1 to 10</h1>
+    <div id="numbers"></div>
+    <script>
+        let numbersDiv = document.getElementById("numbers");
+        for (let i = 1; i <= 10; i++) {
+            numbersDiv.innerHTML += i + "<br>";
+        }
+    </script>
+</body>
+</html>
+
+5.Write a javascript to print the numbers in reverse order
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Printing Numbers in Reverse</title>
+</head>
+<body>
+    <h1>Numbers from 10 to 1 in Reverse Order</h1>
+    <div id="numbers"></div>
+    <script>
+        let numbersDiv = document.getElementById("numbers");
+        for (let i = 10; i >= 1; i--) {
+            numbersDiv.innerHTML += i + "<br>";
+        }
+    </script>
+</body>
+</html>
+
+
+6.Write a javascript to print the reverse of a number......gadbad.....last...
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reverse of a Number</title>
+</head>
+<body>
+    <h1>Reverse of a Number</h1>
+    <input type="number" id="num" placeholder="Enter your number">
+    <button onclick="reverseNumber()">Check</button>
+    <p id="reversedanswer"></p>
+
+    <script>
+        function reverseNumber() {
+            var number = document.getElementById("num").value;
+            var reversedanswer = document.getElementById("reversedanswer");
+            
+            reversedanswer.innerHTML = `Reverse: ${number.split('').reverse().join('')}`;
+        }
+    </script>
+</body>
+</html>
+
+
+7.Write a javascript to check whether a number is Armstrong number or not
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Armstrong Number</title>
+</head>
+
+<body>
+    <h1>Armstrong Number Checker</h1>
+    <label for="userInput">Enter a number:</label>
+    <input type="text" id="userInput">
+    <button onclick="checkArmstrong()">Check</button>
+    <div id="armstrongResult"></div>
+
+    <script>
+        function checkArmstrong() {
+            let userInput = document.getElementById("userInput").value;
+            let armstrongResultDiv = document.getElementById("armstrongResult");
+            let sum = 0;
+
+            for (let i = 0; i < userInput.length; i++) {
+                sum += Number(userInput[i]) ** userInput.length;
+            }
+
+            const isArmstrong = sum === Number(userInput);
+            armstrongResultDiv.innerHTML = `${userInput} ${isArmstrong ? 'is an Armstrong number.' : 'is not an Armstrong number.'}`;
+        }
+    </script>
+</body>
+
+</html>
+
+
+8.Write a javascript to check whether a number is Palindrome or not
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Palindrome Checker</title>
+</head>
+<body>
+    <h1>Palindrome Checker</h1>
+    <label for="number">Enter a number:</label>
+    <input type="number" id="number">
+    <button onclick="checkPalindrome()">Check</button>
+    <p id="answer"></p>
+
+    <script>
+        function checkPalindrome() {
+            var number = document.getElementById("number").value;
+            var isPalindrome = number.toString() === number.toString().split('').reverse().join('');
+            document.getElementById("answer").innerHTML = isPalindrome ? "It's a Palindrome!" : "Not a Palindrome";
+        }
+    </script>
+</body>
+</html>
+
+
+9.Write a javascript to check whether a string is Palindrome or not
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Palindrome</title>
+</head>
+<body>
+    <h1>Palindrome</h1>
+    <label for="String">Enter a string:</label>
+    <input type="text" id="String">
+    <button onclick="checkPalindrome()">Check</button>
+    <p id="answer"></p>
+
+    <script>
+        function checkPalindrome() {
+            var String = document.getElementById("String").value.toLowerCase();
+            var isPalindrome = String === String.split('').reverse().join('');
+            document.getElementById("answer").innerHTML = isPalindrome ? "It's a Palindrome!" : "Not a Palindrome";
+        }
+    </script>
+</body>
+</html>
+
+
+10.Write a javascript to print the factorial of a number
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Factorial Calculator</title>
+</head>
+
+<body>
+    <h1>Factorial Calculator</h1>
+
+    <label for="numberInput">Enter a number:</label>
+    <input type="num" id="num">
+    <button onclick="calculateFactorial()">Calculate</button>
+
+    <script>
+        function calculateFactorial() {
+            const num = document.getElementById('num').value;
+            let factorial = 1;
+
+            for (let i = 2; i <= num; i++) {
+                factorial *= i;
+            }
+
+            alert(`The factorial of ${num} is: ${factorial}`);
+        }
+    </script>
+</body>
+
+</html>
+
+11.Write a javascript to print the sum of n numbers
+
+
+
+12.Write a javascript to check whether a character is vowel or consonant
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Vowel or Consonant Checker</title>
+</head>
+
+<body>
+    <h1>Vowel or Consonant Checker</h1>
+
+    <script>
+        const character = prompt('Enter a character:');
+
+        const vowels = 'aeiouAEIOU';
+        const isVowel = vowels.includes(character);
+
+        if (isVowel) {
+            alert(`${character} is a vowel.`);
+        } else {
+            alert(`${character} is a consonant.`);
+        }
+    </script>
+</body>
+
+</html>
+
+
+13.Write a javascript to check whether a number is prime number or not
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prime Number Checker</title>
+</head>
+<body>
+    <h1>Check Prime Number</h1>
+    <label for="Inputprime">Enter a number:</label>
+    <input type="primenumber" id="Inputprime" placeholder="Enter number">
+    <button onclick="checkPrimeNumber()">Check</button>
+    <p id="answer"></p>
+
+    <script>
+        function checkPrimeNumber() {
+            var number =document.getElementById("Inputprime").value;
+
+            if (isNaN(number) || number <= 1) {
+                document.getElementById("answer").innerHTML = "Please enter a valid number greater than 1.";
+                return;
+            }
+
+            for (let i = 2; i <= Math.sqrt(number); i++) {
+                if (number % i === 0) {
+                    document.getElementById("answer").innerHTML = `${number} is not a prime number.`;
+                    return;
+                }
+            }
+
+            document.getElementById("answer").innerHTML = `${number} is a prime number!`;
+        }
+    </script>
+</body>
+</html>
+
+
+14.Write a javascript to print the Fibonacci series
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fibonacci Series</title>
+</head>
+<body>
+    <h1>Fibonacci Series</h1>
+    <div>No. Of Terms:</div>
+    <input type="number" id="num" min="1" value="10">
+    <button onclick="generateFibonacci()">Generate</button>
+    <p id="answer"></p>
+
+    <script>
+        function generateFibonacci() {
+            var num = parseInt(document.getElementById("num").value);
+            var answer = document.getElementById("answer");
+            let num1 = 0, num2 = 1, nextTerm;
+            let series = "Fibonacci Series:<br>";
+
+            for (let i = 1; i <= num; i++) {
+                series += num1 + "<br>";
+                nextTerm = num1 + num2;
+                num1 = num2;
+                num2 = nextTerm;
+            }
+
+            answer.innerHTML = series;
+        }
+    </script>
+</body>
+</html>
+
+
+15.Write a javascript to print prime numbers between 1 and 100..
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prime Numbers from 1 to 100</title>
+</head>
+<body>
+    <h1>Prime Numbers from 1 to 100</h1>
+    <div id="numbers"></div>
+    <script>
+        let numbersDiv = document.getElementById("numbers");
+
+        function isPrime(num) {
+            for (let i = 2; i < num; i++) {
+                if (num % i === 0) {
+                    return false;
+                }
+            }
+            return num > 1;
+        }
+
+        for (let i = 2; i <= 100; i++) {
+            if (isPrime(i)) {
+                 numbersDiv.innerHTML += i + "<br>";
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+16.Write a javascript to print even numbers between 1 and 100
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Even numbers from 1 to 100</title>
+</head>
+<body>
+    <h1>Even numbers from 1 to 100</h1>
+    <div id="numbers"></div>
+    <script>
+        let numbersDiv = document.getElementById("numbers");
+        for (let i = 2; i <= 100; i+=2) {
+            numbersDiv.innerHTML += i +  "<br>";
+        }
+    </script>
+</body>
+</html>
+
+17.Write a javascript to print odd numbers between 1 and 100
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Odd numbers from 1 to 100</title>
+</head>
+<body>
+    <h1>Odd numbers from 1 to 100</h1>
+    <div id="numbers"></div>
+    <script>
+        let numbersDiv = document.getElementById("numbers");
+        for (let i = 1; i <= 100; i+=2) {
+            numbersDiv.innerHTML += i +  "<br>";
+        }
+    </script>
+</body>
+</html>
+
+18.Write a javascript to print leap years between 2021 and 2030
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>leap years between 2021 and 2030</title>
+</head>
+<body>
+    <h1>leap years between 2021 and 2030</h1>
+    <div id="leapyears"></div>
+    <script>
+        let leapyearsDiv = document.getElementById("leapyears");
+        for (var year = 2021; year <= 2030; year++) {
+            if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+                leapyearsDiv.innerHTML += year + "<br>";
+            }
+        }
+    </script>
+</body>
+</html>
+
+19.Write a javascript to validate a mobile number
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mobile Number Validation</title>
+</head>
+<body>
+    <h1>Mobile Number Validation</h1>
+    <label for="number">Enter your mobile number:</label>
+    <input type="text" id="number" placeholder="eg:1234567890">
+    <button onclick="validateMobileNumber()">Validate</button>
+    <p id="answer"></p>
+
+    <script>
+        function validateMobileNumber() {
+            var number = document.getElementById("number").value;
+            var num = /^[0-9]{10}$/;
+
+            if (num.test(number)) {
+                document.getElementById("answer").innerHTML = "Valid mobile number!";
+            } else {
+                document.getElementById("answer").innerHTML = "Invalid mobile number";
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+20.Write a javascript to validate an email id.
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email Validation</title>
+</head>
+<body>
+    <h1>Email Validation</h1>
+    <label for="email">Enter your email id:</label>
+    <input type="text" id="email" placeholder="eg.abx@gmail.com">
+    <button onclick="validateEmail()">Validate</button>
+    <p id="answer"></p>
+
+    <script>
+        function validateEmail() {
+            var email = document.getElementById("email").value;
+            var isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+            document.getElementById("answer").innerHTML = isValid ? "Valid email address!" : "Invalid email address,Enter a valid email."; 
+        }
+    </script>
+</body>
+</html>
